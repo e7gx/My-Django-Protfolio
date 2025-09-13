@@ -16,42 +16,108 @@
             box-sizing: border-box;
         }
 
+        
         :root {
-            /* Light theme colors */
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
+            /* Light theme colors - Updated with your palette */
+            --bg-primary: #E6EDF4;
+            --bg-secondary: #ffffff;
             --bg-card: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --text-muted: #94a3b8;
-            --accent-color: #3b82f6;
-            --accent-hover: #2563eb;
-            --logo: #0927ac;
-            --border-color: #e2e8f0;
-            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --gradient-primary: linear-gradient(135deg, #03145f 0%, #3d5f92 100%);
-            --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --text-primary: #171A2C;
+            --text-secondary: #0B3656;
+            --text-muted: #387580;
+            --accent-color: #BB9875;
+            --accent-hover: #A68660;
+            --logo: #0B3656;
+            --border-color: #387580;
+            --shadow-light: 0 1px 3px rgba(23, 26, 44, 0.1);
+            --shadow-medium: 0 4px 6px -1px rgba(11, 54, 86, 0.1);
+            --shadow-heavy: 0 20px 25px -5px rgba(11, 54, 86, 0.15);
+            --gradient-primary: linear-gradient(135deg, #0B3656 0%, #387580 100%);
+            --gradient-accent: linear-gradient(270deg,#bb9875c9 95%, #bb9875c9 5%);
+
+            /* Additional colors for enhanced palette */
+            --danger-color: #8C3C2C;
+            --danger-hover: #732F23;
+            --success-color: #387580;
+            --warning-color: #BB9875;
+            --info-color: #0B3656;
+            
         }
 
-        [data-theme="dark"] {
-            /* Dark theme colors */
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: #334155;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-muted: #64748b;
-            --accent-color: #60a5fa;
-            --accent-hover: #3b82f6;
-            --border-color: #475569;
-            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3);
-            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
-            --gradient-primary: linear-gradient(135deg, #03145f 0%, #ffffff 100%);
-            --gradient-accent: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
-        }
+[data-theme="dark"] {
+    /* Dark theme colors - Updated with your palette */
+    --bg-primary: #171A2C;
+    --bg-secondary: #E6EDF4;
+    --bg-card: #0B3656;
+    --text-primary: #E6EDF4;
+    --text-secondary: #8C9BAF;
+    --text-muted: #E6EDF4;
+    --accent-color: #BB9875;
+    --accent-hover: #E6EDF4;
+    --logo: #BB9875;
+    --border-color: #BB9875;
+    --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+    --gradient-primary: linear-gradient(135deg, #BB9875 0%, #0B3656 100%);
+    --gradient-accent:  linear-gradient(60deg,#BB9875 0%,rgba(99, 116, 132, 1) 100%);
+
+
+    
+    /* Dark theme specific opacity variations */
+    --bg-overlay: rgba(23, 26, 44, 0.9);
+    --accent-light: rgba(187, 152, 117, 0.15);
+    --accent-medium: rgba(187, 152, 117, 0.25);
+    --primary-light: rgba(11, 54, 86, 0.2);
+    --primary-medium: rgba(11, 54, 86, 0.4);
+    
+    /* Enhanced dark theme variations */
+    --card-hover: #4A6B78;
+    --input-bg: rgba(56, 117, 128, 0.3);
+    --input-border: rgba(187, 152, 117, 0.3);
+    --input-focus: rgba(187, 152, 117, 0.5);
+    
+    /* Dark theme specific gradients */
+    --gradient-card: linear-gradient(135deg, #387580 0%, #0B3656 100%);
+    --gradient-button: linear-gradient(135deg, #BB9875 0%, #A68660 100%);
+    --gradient-hero: linear-gradient(135deg, #171A2C 0%, rgba(11, 54, 86, 0.8) 100%);
+    
+    /* Text contrast improvements for dark theme */
+    --text-contrast: #FFFFFF;
+    --text-highlight: #BB9875;
+    --text-link: #D4B896;
+    --text-link-hover: #E6C7A7;
+    
+    /* Dark theme specific borders */
+    --border-light: rgba(187, 152, 117, 0.2);
+    --border-medium: rgba(187, 152, 117, 0.3);
+    --border-strong: rgba(187, 152, 117, 0.5);
+
+    
+    /* Dark theme specific effects */
+    --glow-primary: 0 0 20px rgba(187, 152, 117, 0.3);
+    --glow-accent: 0 0 15px rgba(56, 117, 128, 0.4);
+    --glow-danger: 0 0 15px rgba(231, 76, 60, 0.3);
+    
+    /* Backdrop and overlay colors */
+    --backdrop-blur: rgba(23, 26, 44, 0.7);
+    --modal-backdrop: rgba(0, 0, 0, 0.8);
+    --dropdown-backdrop: rgba(23, 26, 44, 0.95);
+    
+    /* Interactive element colors */
+    --hover-overlay: rgba(187, 152, 117, 0.1);
+    --active-overlay: rgba(187, 152, 117, 0.2);
+    --focus-ring: rgba(187, 152, 117, 0.4);
+    
+    /* Code and syntax highlighting (if needed) */
+    --code-bg: rgba(11, 54, 86, 0.5);
+    --code-border: rgba(56, 117, 128, 0.3);
+    --code-text: #E6EDF4;
+    --code-comment: #8C9BAF;
+    --code-keyword: #BB9875;
+    --code-string: #4ECDC4;
+    --code-number: #F39C12;
+}
 
         html {
             scroll-behavior: smooth;
