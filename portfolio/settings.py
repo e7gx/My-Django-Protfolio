@@ -28,12 +28,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["abdu-gh.com", "www.abdu-gh.com"]
-
+ALLOWED_HOSTS = ["*"]
+# السماح بأصل موثوق للفورم بعد نشر المشروع
 CSRF_TRUSTED_ORIGINS = [
     "https://abdu-gh.com",
-    "https://www.abdu-gh.com",
 ]
+
 # تأكد من أن الكوكيز آمنة (ضروري على HTTPS)
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
