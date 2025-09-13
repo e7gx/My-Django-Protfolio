@@ -20,12 +20,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://www.abdu-gh.com",
 ]
 
-# تأكد أن الكوكيز آمنة
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
 
-# أوقف التحويل الإجباري لـ HTTPS لأن Cloudflare/Railway يسوونها بالفعل
-SECURE_SSL_REDIRECT = False  
 
 INSTALLED_APPS = [
     'django.contrib.admin',
