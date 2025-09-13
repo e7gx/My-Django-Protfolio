@@ -29,7 +29,20 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
+# السماح بأصل موثوق للفورم بعد نشر المشروع
+CSRF_TRUSTED_ORIGINS = [
+    "https://my-django-protfolio-production.up.railway.app",
+]
 
+# تأكد من أن الكوكيز آمنة (ضروري على HTTPS)
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+# اختياري: HSTS لتأمين الموقع
+SECURE_HSTS_SECONDS = 3600  # 1 ساعة
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_SSL_REDIRECT = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
