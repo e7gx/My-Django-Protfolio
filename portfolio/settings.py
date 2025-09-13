@@ -18,6 +18,7 @@ ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = [
     "https://abdu-gh.com",
     "https://www.abdu-gh.com",
+    "https://my-django-protfolio-production.up.railway.app"
 ]
 
 CSRF_COOKIE_SECURE = True
