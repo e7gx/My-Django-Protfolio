@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 # حدد دومينك بدل النجمة لتحسين الأمان
-ALLOWED_HOSTS = ["abdu-gh.com", "www.abdu-gh.com"]
+ALLOWED_HOSTS = ["*"]
 
 # السماح بالدومينات الموثوقة للفورم
 CSRF_TRUSTED_ORIGINS = [
