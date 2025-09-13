@@ -31,6 +31,7 @@ DEBUG = False
 ALLOWED_HOSTS = ["*"]
 # السماح بأصل موثوق للفورم بعد نشر المشروع
 CSRF_TRUSTED_ORIGINS = [
+    "https://my-django-protfolio-production.up.railway.app",
     "https://abdu-gh.com",
 ]
 
