@@ -1,0 +1,213 @@
+{% extends "main/base.html" %}
+
+{% block title %}Login - Abdullah Alghamdi{% endblock %}
+
+{% block content %}
+<!-- Login Section -->
+<section class="section" id="login">
+    <div class="container">
+        <h2 class="section-title fade-in">Sign In</h2>
+        <p class="section-subtitle fade-in">Enter your credentials to access your account</p>
+
+        <!-- Login Form -->
+        <div class="contact-form fade-in" style="max-width: 500px; margin: 0 auto;">
+            <!-- Error Messages -->
+            {% if messages %}
+                <div style="margin-bottom: 2rem;">
+                    {% for message in messages %}
+                        <div style="
+                            background: rgba(239, 68, 68, 0.1); 
+                            border: 1px solid rgba(239, 68, 68, 0.3); 
+                            color: #ef4444; 
+                            padding: 1rem; 
+                            border-radius: 0.5rem; 
+                            margin-bottom: 0.5rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        ">
+                            <i class='bx bx-error-circle'></i>
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <form method="POST" autocomplete="off">
+                {% csrf_token %}
+
+                        <h2 class="section-title fade-in">Sign In</h2>
+
+
+                <!-- Username -->
+                <div class="form-group" style="position: relative;">
+                    <label for="username" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class='bx bx-user' style="color: var(--accent-color);"></i>
+                        Username 
+                    </label>
+                    <div style="position: relative;">
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            placeholder="Enter your username" 
+                            required
+                            style="
+                                width: 100%;
+                                padding: 0.875rem 1rem 0.875rem 2.5rem;
+                                background: var(--bg-secondary);
+                                border: 1px solid var(--border-color);
+                                border-radius: 0.5rem;
+                                color: var(--text-primary-field);
+                                font-size: 1rem;
+                                transition: all 0.3s ease;
+                            "
+                            onfocus="this.style.borderColor='var(--accent-color)'; this.style.boxShadow='0 0 0 3px rgba(187, 152, 117, 0.1)'"
+                            onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'"
+                        >
+                        <i class='bx bx-user' style="
+                            position: absolute; 
+                            left: 0.75rem; 
+                            top: 50%; 
+                            transform: translateY(-50%); 
+                            color: var(--text-muted);
+                            pointer-events: none;
+                        "></i>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group" style="position: relative;">
+                    <label for="password" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class='bx bx-lock-alt' style="color: var(--accent-color);"></i>
+                        Password
+                    </label>
+                    <div style="position: relative;">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Enter your password" 
+                            required
+                            style="
+                                width: 100%;
+                                padding: 0.875rem 2.5rem 0.875rem 2.5rem;
+                                background: var(--bg-secondary);
+                                border: 1px solid var(--border-color);
+                                border-radius: 0.5rem;
+                                color: var(--text-primary-field);
+                                font-size: 1rem;
+                                transition: all 0.3s ease;
+                            "
+                            onfocus="this.style.borderColor='var(--accent-color)'; this.style.boxShadow='0 0 0 3px rgba(187, 152, 117, 0.1)'"
+                            onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'"
+                        >
+                        <i class='bx bx-lock-alt' style="
+                            position: absolute; 
+                            left: 0.75rem; 
+                            top: 50%; 
+                            transform: translateY(-50%); 
+                            color: var(--text-muted);
+                            pointer-events: none;
+                        "></i>
+                        <button 
+                            type="button" 
+                            onclick="togglePassword('password', this)"
+                            style="
+                                position: absolute; 
+                                right: 0.75rem; 
+                                top: 50%; 
+                                transform: translateY(-50%); 
+                                background: none; 
+                                border: none; 
+                                color: var(--text-muted); 
+                                cursor: pointer; 
+                                padding: 0.25rem;
+                                transition: color 0.3s ease;
+                            "
+                            onmouseover="this.style.color='var(--accent-color)'"
+                            onmouseout="this.style.color='var(--text-muted)'"
+                        >
+                            <i class='bx bx-hide'></i>
+                        </button>
+                    </div>
+                </div>
+
+                {% comment %} <!-- Remember Me & Forgot Password -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input 
+                            type="checkbox" 
+                            name="remember_me"
+                            style="
+                                width: 1.2rem; 
+                                height: 1.2rem; 
+                                accent-color: var(--accent-color);
+                                cursor: pointer;
+                            "
+                        >
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">Remember me</span>
+                    </label>
+                    <a href="#forgot-password" style="
+                        color: var(--accent-color); 
+                        text-decoration: none; 
+                        font-size: 0.9rem;
+                        transition: opacity 0.3s ease;
+                    " onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                        Forgot password?
+                    </a>
+                </div> {% endcomment %}
+
+                <!-- Submit Button -->
+                <button 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    style="
+                        width: 100%; 
+                        justify-content: center; 
+                        margin-top: 0.5rem;
+                        padding: 1rem 2rem;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        position: relative;
+                        overflow: hidden;
+                    "
+                >
+                    <i class='bx bx-log-in' style="margin-right: 0.5rem;"></i>
+                    Sign In
+                </button>
+            </form>
+
+            <!-- Footer Link -->
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-muted);">
+                    Don't have an account? 
+                    <a href="{% url 'signup' %}" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">
+                        Create Account
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Login Section -->
+
+
+<script>
+function togglePassword(inputId, button) {
+    const input = document.getElementById(inputId);
+    const icon = button.querySelector('i');
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('bx-hide');
+        icon.classList.add('bx-show');
+    } else {
+        input.type = 'password';
+        icon.classList.remove('bx-show');
+        icon.classList.add('bx-hide');
+    }
+}
+</script>
+
+{% endblock %}

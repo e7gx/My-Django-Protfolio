@@ -1,0 +1,335 @@
+{% extends "main/base.html" %}
+
+{% block title %}Create Account - Abdullah Alghamdi{% endblock %}
+
+{% block content %}
+<!-- Signup Section -->
+<section class="section" id="signup">
+    <div class="container">
+        <h2 class="section-title fade-in">Create Account</h2>
+        <p class="section-subtitle fade-in">Join to access your portfolio features</p>
+
+        <!-- Signup Form -->
+        <div class="contact-form fade-in" style="max-width: 800px; margin: 0 auto;">
+            <h3 style="margin-bottom: 2rem; color: var(--accent-color); text-align: center; font-size: 1.5rem;">Create Your Account</h3>
+
+            <!-- Error Messages -->
+            {% if messages %}
+                <div style="margin-bottom: 2rem;">
+                    {% for message in messages %}
+                        <div style="
+                            background: rgba(239, 68, 68, 0.1); 
+                            border: 1px solid rgba(239, 68, 68, 0.3); 
+                            color: #ef4444; 
+                            padding: 1rem; 
+                            border-radius: 0.5rem; 
+                            margin-bottom: 0.5rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        ">
+                            <i class='bx bx-error-circle'></i>
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <form method="POST" autocomplete="off">
+                {% csrf_token %}
+
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class='bx bx-user' style="color: var(--accent-color);"></i>
+                        Username
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Enter your username" 
+                        required
+                        style="
+                            width: 100%;
+                            padding: 0.875rem 1rem 0.875rem 2.5rem;
+                            background: var(--bg-secondary);
+                            border: 1px solid var(--border-color);
+                            border-radius: 0.5rem;
+                            color: var(--text-primary-field);
+                            font-size: 1rem;
+                            transition: all 0.3s ease;
+                            position: relative;
+                        "
+                        onfocus="this.style.borderColor='var(--accent-color)'; this.style.boxShadow='0 0 0 3px rgba(187, 152, 117, 0.1)'"
+                        onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'"
+                    >
+                   
+                </div>
+
+                <!-- Email -->
+                <div class="form-group" style="position: relative;">
+                    <label for="email" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class='bx bx-envelope' style="color: var(--accent-color);"></i>
+                        Email Address
+                    </label>
+                    <div style="position: relative;">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email" 
+                            required
+                            style="
+                                width: 100%;
+                                padding: 0.875rem 1rem 0.875rem 2.5rem;
+                                background: var(--bg-secondary);
+                                border: 1px solid var(--border-color);
+                                border-radius: 0.5rem;
+                                color: var(--text-primary-field);
+                                font-size: 1rem;
+                                transition: all 0.3s ease;
+                            "
+                            onfocus="this.style.borderColor='var(--accent-color)'; this.style.boxShadow='0 0 0 3px rgba(187, 152, 117, 0.1)'"
+                            onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'"
+                        >
+
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group" style="position: relative;">
+                    <label for="phone" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class='bx bx-phone' style="color: var(--accent-color);"></i>
+                        Phone Number
+                    </label>
+                    <div style="position: relative;">
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="Enter your phone number" 
+                            required
+                            style="
+                                width: 100%;
+                                padding: 0.875rem 1rem 0.875rem 2.5rem;
+                                background: var(--bg-secondary);
+                                border: 1px solid var(--border-color);
+                                border-radius: 0.5rem;
+                                color: var(--text-primary-field);
+                                font-size: 1rem;
+                                transition: all 0.3s ease;
+                            "
+                            onfocus="this.style.borderColor='var(--accent-color)'; this.style.boxShadow='0 0 0 3px rgba(187, 152, 117, 0.1)'"
+                            onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'"
+                        >
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group" style="position: relative;">
+                    <label for="password1" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class='bx bx-lock-alt' style="color: var(--accent-color);"></i>
+                        Password
+                    </label>
+                    <div style="position: relative;">
+                        <input 
+                            type="password" 
+                            id="password1" 
+                            name="password1" 
+                            placeholder="Enter your password" 
+                            required
+                            style="
+                                width: 100%;
+                                padding: 0.875rem 2.5rem 0.875rem 2.5rem;
+                                background: var(--bg-secondary);
+                                border: 1px solid var(--border-color);
+                                border-radius: 0.5rem;
+                                color: var(--text-primary-field);
+                                font-size: 1rem;
+                                transition: all 0.3s ease;
+                            "
+                            onfocus="this.style.borderColor='var(--accent-color)'; this.style.boxShadow='0 0 0 3px rgba(187, 152, 117, 0.1)'"
+                            onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'"
+                        >
+
+                        <button 
+                            type="button" 
+                            onclick="togglePassword('password1', this)"
+                            style="
+                                position: absolute; 
+                                right: 0.75rem; 
+                                top: 50%; 
+                                transform: translateY(-50%); 
+                                background: none; 
+                                border: none; 
+                                color: var(--text-muted); 
+                                cursor: pointer; 
+                                padding: 0.25rem;
+                                transition: color 0.3s ease;
+                            "
+                            onmouseover="this.style.color='var(--accent-color)'"
+                            onmouseout="this.style.color='var(--text-muted)'"
+                        >
+                            <i class='bx bx-hide'></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group" style="position: relative;">
+                    <label for="password2" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class='bx bx-lock' style="color: var(--accent-color);"></i>
+                        Confirm Password
+                    </label>
+                    <div style="position: relative;">
+                        <input 
+                            type="password" 
+                            id="password2" 
+                            name="password2" 
+                            placeholder="Confirm your password" 
+                            required
+                            style="
+                                width: 100%;
+                                padding: 0.875rem 2.5rem 0.875rem 2.5rem;
+                                background: var(--bg-secondary);
+                                border: 1px solid var(--border-color);
+                                border-radius: 0.5rem;
+                                color: var(--text-primary-field);
+                                font-size: 1rem;
+                                transition: all 0.3s ease;
+                            "
+                            onfocus="this.style.borderColor='var(--accent-color)'; this.style.boxShadow='0 0 0 3px rgba(187, 152, 117, 0.1)'"
+                            onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'"
+                        >
+            
+                        <button 
+                            type="button" 
+                            onclick="togglePassword('password2', this)"
+                            style="
+                                position: absolute; 
+                                right: 0.75rem; 
+                                top: 50%; 
+                                transform: translateY(-50%); 
+                                background: none; 
+                                border: none; 
+                                color: var(--text-muted); 
+                                cursor: pointer; 
+                                padding: 0.25rem;
+                                transition: color 0.3s ease;
+                            "
+                            onmouseover="this.style.color='var(--accent-color)'"
+                            onmouseout="this.style.color='var(--text-muted)'"
+                        >
+                            <i class='bx bx-hide'></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Relation -->
+                <div class="form-group" style="position: relative;">
+                    <label for="relation" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class='bx bx-group' style="color: var(--accent-color);"></i>
+                        Relation
+                    </label>
+                    <div style="position: relative;">
+                        <select 
+                            id="relation" 
+                            name="relation" 
+                            required
+                            style="
+                                width: 100%;
+                                padding: 0.875rem 2.5rem 0.875rem 2.5rem;
+                                background: var(--bg-secondary);
+                                border: 1px solid var(--border-color);
+                                border-radius: 0.5rem;
+                                color: var(--text-primary-field);
+                                font-size: 1rem;
+                                transition: all 0.3s ease;
+                                appearance: none;
+                                cursor: pointer;
+                            "
+                            onfocus="this.style.borderColor='var(--accent-color)'; this.style.boxShadow='0 0 0 3px rgba(187, 152, 117, 0.1)'"
+                            onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'"
+                        >
+                            <option value="" disabled selected>Select your relation</option>
+                            {% for value, display in relation_choices %}
+                                <option value="{{ value }}">{{ display }}</option>
+                            {% endfor %}
+                        </select>
+        
+                        <i class='bx bx-chevron-down' style="
+                            position: absolute; 
+                            right: 0.75rem; 
+                            top: 50%; 
+                            transform: translateY(-50%); 
+                            color: var(--text-muted);
+                            pointer-events: none;
+                            transition: transform 0.3s ease;
+                        "></i>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    style="
+                        width: 100%; 
+                        justify-content: center; 
+                        margin-top: 1rem;
+                        padding: 1rem 2rem;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        position: relative;
+                        overflow: hidden;
+                    "
+                >
+                    <i class='bx bx-send' style="margin-right: 0.5rem;"></i>
+                    Create Account
+                </button>
+            </form>
+
+            <!-- Footer Link -->
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-muted);">
+                    Already have an account? 
+                    <a href="{% url 'login' %}" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">
+                        Sign In
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Password Toggle Function
+function togglePassword(inputId, button) {
+    const input = document.getElementById(inputId);
+    const icon = button.querySelector('i');
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('bx-hide');
+        icon.classList.add('bx-show');
+    } else {
+        input.type = 'password';
+        icon.classList.remove('bx-show');
+        icon.classList.add('bx-hide');
+    }
+}
+
+// Add focus effects for select dropdown
+document.getElementById('relation').addEventListener('focus', function() {
+    const arrow = this.nextElementSibling.nextElementSibling;
+    arrow.style.transform = 'translateY(-50%) rotate(180deg)';
+});
+
+document.getElementById('relation').addEventListener('blur', function() {
+    const arrow = this.nextElementSibling.nextElementSibling;
+    arrow.style.transform = 'translateY(-50%) rotate(0deg)';
+});
+</script>
+
+{% endblock %}
