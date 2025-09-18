@@ -3,135 +3,622 @@
     <div class="container">
         <h2 class="section-title fade-in">My Certificates</h2>
         <p class="section-subtitle fade-in">Showcasing my latest certificates and achievements</p>
-        <div class="work-grid">
+        
+        <!-- Enhanced Grid Layout -->
+        <div class="work-grid" style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        ">
             <!-- Tuwaiq Academy Django Certificate -->
-            <div class="work-card fade-in" data-category="web">
-                <div class="work-image">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/Tuwaiq%20django.png?alt=media&token=cae4d6e7-9267-43ee-b9f6-6fa881093d76" alt="Tuwaiq Academy Django Certificate"
-                         style="width:100%; height:100%; object-fit:cover; border-radius:8px;"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div
-                        style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:3rem; color: var(--text-muted);">
-                        <i class='bx bx-package'></i>
+            <div class="work-card fade-in" data-category="web" style="
+                position: relative;
+                overflow: hidden;
+                transform: translateY(20px);
+                opacity: 0;
+                animation: slideUpFadeIn 0.8s ease-out 0.1s forwards;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            ">
+                <div class="work-image" style="
+                    position: relative;
+                    overflow: hidden;
+                    height: 220px;
+                    background: var(--bg-secondary);
+                    border-radius: 1rem 1rem 0 0;
+                ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/Tuwaiq%20django.png?alt=media&token=cae4d6e7-9267-43ee-b9f6-6fa881093d76" 
+                         alt="Tuwaiq Academy Django Certificate"
+                         style="
+                            width: 100%; 
+                            height: 100%; 
+                            object-fit: cover; 
+                            transition: transform 0.5s ease;
+                         "
+                         onload="this.style.opacity='1'"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="
+                        display: none; 
+                        width: 100%; 
+                        height: 100%; 
+                        align-items: center; 
+                        justify-content: center; 
+                        font-size: 3rem; 
+                        color: var(--text-muted);
+                        background: var(--bg-secondary);
+                    ">
+                        <i class='bx bx-award'></i>
+                    </div>
+                    <div style="
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        background: var(--accent-color);
+                        color: white;
+                        padding: 0.5rem;
+                        border-radius: 50%;
+                        font-size: 1.2rem;
+                        box-shadow: var(--shadow-medium);
+                    ">
+                        <i class='bx bx-code-alt'></i>
                     </div>
                 </div>
-                <div class="work-content">
-                    <h4 class="work-title">Tuwaiq Academy Django Certificate</h4>
-                    <p class="work-description">Certificate of completion for the Django course at Tuwaiq Academy.</p>
-                    <a href="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/nEgoYe6.pdf?alt=media&token=7edc88c8-cca8-4224-a190-3516667afeb2"
-                       class="work-link btn" target="_blank" rel="noopener noreferrer">
-                        <i class='bx bx-link-external'></i> View Certificate
-                    </a>
+                <div class="work-content" style="
+                    padding: 2rem 1.5rem;
+                    background: var(--bg-card);
+                    border-radius: 0 0 1rem 1rem;
+                ">
+                    <h4 class="work-title" style="
+                        margin-bottom: 0.75rem;
+                        color: var(--text-primary);
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        line-height: 1.3;
+                    ">Tuwaiq Academy Django Certificate</h4>
+                    <p class="work-description" style="
+                        color: var(--text-secondary);
+                        margin-bottom: 1.5rem;
+                        line-height: 1.6;
+                        font-size: 0.95rem;
+                    ">Professional certification for completing the advanced Django web development course at Tuwaiq Academy.</p>
+                    <div class="work-links" style="display: flex; gap: 0.75rem;">
+                        <a href="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/nEgoYe6.pdf?alt=media&token=7edc88c8-cca8-4224-a190-3516667afeb2"
+                           class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="
+                           flex: 1;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+                           gap: 0.5rem;
+                           padding: 0.875rem 1.5rem;
+                           font-size: 0.9rem;
+                           font-weight: 600;
+                           transition: all 0.3s ease;
+                        ">
+                            <i class='bx bx-link-external'></i> View Certificate
+                        </a>
+                    </div>
                 </div>
             </div>
 
-             <!-- CAPM Certificate -->
-            <div class="work-card fade-in" data-category="web">
-                <div class="work-image">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/Screenshot%201447-03-26%20at%207.57.13%E2%80%AFPM.png?alt=media&token=dbfd1eeb-4edd-4f94-b2fd-129f7fc473b3" alt="CAPM Certificate"
-                         style="width:100%; height:100%; object-fit:cover; border-radius:8px;"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div
-                        style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:3rem; color: var(--text-muted);">
-                        <i class='bx bx-package'></i>
+            <!-- CAPM Certificate -->
+            <div class="work-card fade-in" data-category="web" style="
+                position: relative;
+                overflow: hidden;
+                transform: translateY(20px);
+                opacity: 0;
+                animation: slideUpFadeIn 0.8s ease-out 0.2s forwards;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            ">
+                <div class="work-image" style="
+                    position: relative;
+                    overflow: hidden;
+                    height: 220px;
+                    background: var(--bg-secondary);
+                    border-radius: 1rem 1rem 0 0;
+                ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/Screenshot%201447-03-26%20at%207.57.13%E2%80%AFPM.png?alt=media&token=dbfd1eeb-4edd-4f94-b2fd-129f7fc473b3" 
+                         alt="CAPM Certificate"
+                         style="
+                            width: 100%; 
+                            height: 100%; 
+                            object-fit: cover; 
+                            transition: transform 0.5s ease;
+                         "
+                         onload="this.style.opacity='1'"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="
+                        display: none; 
+                        width: 100%; 
+                        height: 100%; 
+                        align-items: center; 
+                        justify-content: center; 
+                        font-size: 3rem; 
+                        color: var(--text-muted);
+                        background: var(--bg-secondary);
+                    ">
+                        <i class='bx bx-award'></i>
+                    </div>
+                    <div style="
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        background: var(--accent-color);
+                        color: white;
+                        padding: 0.5rem;
+                        border-radius: 50%;
+                        font-size: 1.2rem;
+                        box-shadow: var(--shadow-medium);
+                    ">
+                        <i class='bx bx-briefcase'></i>
                     </div>
                 </div>
-                <div class="work-content">
-                    <h4 class="work-title">CAPM Certificate</h4>
-                    <p class="work-description">Certificate for the CAPM exam.</p>
-                    <a href="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/PMI%20CAPM%20Certification.pdf?alt=media&token=1936f4a3-c3d9-4d6e-8b7c-dc501ebbcfbe"
-                       class="work-link btn" target="_blank" rel="noopener noreferrer">
-                        <i class='bx bx-link-external'></i> View Certificate
-                    </a>
+                <div class="work-content" style="
+                    padding: 2rem 1.5rem;
+                    background: var(--bg-card);
+                    border-radius: 0 0 1rem 1rem;
+                ">
+                    <h4 class="work-title" style="
+                        margin-bottom: 0.75rem;
+                        color: var(--text-primary);
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        line-height: 1.3;
+                    ">CAPM Certification</h4>
+                    <p class="work-description" style="
+                        color: var(--text-secondary);
+                        margin-bottom: 1.5rem;
+                        line-height: 1.6;
+                        font-size: 0.95rem;
+                    ">Certified Associate in Project Management (CAPM)® credential from PMI, demonstrating project management expertise.</p>
+                    <div class="work-links" style="display: flex; gap: 0.75rem;">
+                        <a href="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/PMI%20CAPM%20Certification.pdf?alt=media&token=1936f4a3-c3d9-4d6e-8b7c-dc501ebbcfbe"
+                           class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="
+                           flex: 1;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+                           gap: 0.5rem;
+                           padding: 0.875rem 1.5rem;
+                           font-size: 0.9rem;
+                           font-weight: 600;
+                           transition: all 0.3s ease;
+                        ">
+                            <i class='bx bx-link-external'></i> View Certificate
+                        </a>
+                    </div>
                 </div>
             </div>
 
-                <!-- P-CEP Certificate -->
-            <div class="work-card fade-in" data-category="web">
-                <div class="work-image">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/P-CEP.png?alt=media&token=a66cfd9a-2134-44c3-95e6-de09ebfa67f6" alt="P-CEP Certificate"
-                         style="width:100%; height:100%; object-fit:cover; border-radius:8px;"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div
-                        style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:3rem; color: var(--text-muted);">
-                        <i class='bx bx-package'></i>
+            <!-- P-CEP Certificate -->
+            <div class="work-card fade-in" data-category="web" style="
+                position: relative;
+                overflow: hidden;
+                transform: translateY(20px);
+                opacity: 0;
+                animation: slideUpFadeIn 0.8s ease-out 0.3s forwards;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            ">
+                <div class="work-image" style="
+                    position: relative;
+                    overflow: hidden;
+                    height: 220px;
+                    background: var(--bg-secondary);
+                    border-radius: 1rem 1rem 0 0;
+                ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/P-CEP.png?alt=media&token=a66cfd9a-2134-44c3-95e6-de09ebfa67f6" 
+                         alt="P-CEP Certificate"
+                         style="
+                            width: 100%; 
+                            height: 100%; 
+                            object-fit: cover; 
+                            transition: transform 0.5s ease;
+                         "
+                         onload="this.style.opacity='1'"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="
+                        display: none; 
+                        width: 100%; 
+                        height: 100%; 
+                        align-items: center; 
+                        justify-content: center; 
+                        font-size: 3rem; 
+                        color: var(--text-muted);
+                        background: var(--bg-secondary);
+                    ">
+                        <i class='bx bx-award'></i>
+                    </div>
+                    <div style="
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        background: var(--accent-color);
+                        color: white;
+                        padding: 0.5rem;
+                        border-radius: 50%;
+                        font-size: 1.2rem;
+                        box-shadow: var(--shadow-medium);
+                    ">
+                        <i class='bx bx-code'></i>
                     </div>
                 </div>
-                <div class="work-content">
-                    <h4 class="work-title">P-CEP Certificate</h4>
-                    <p class="work-description">Certificate for the P-CEP exam.</p>
-                    <a href="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/certificate_GX1Z.7b8N.DoT3.pdf?alt=media&token=cae0b5db-3c97-4999-9bd9-51f954a7dd60"
-                       class="work-link btn" target="_blank" rel="noopener noreferrer">
-                        <i class='bx bx-link-external'></i> View Certificate
-                    </a>
+                <div class="work-content" style="
+                    padding: 2rem 1.5rem;
+                    background: var(--bg-card);
+                    border-radius: 0 0 1rem 1rem;
+                ">
+                    <h4 class="work-title" style="
+                        margin-bottom: 0.75rem;
+                        color: var(--text-primary);
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        line-height: 1.3;
+                    ">P-CEP Certification</h4>
+                    <p class="work-description" style="
+                        color: var(--text-secondary);
+                        margin-bottom: 1.5rem;
+                        line-height: 1.6;
+                        font-size: 0.95rem;
+                    ">Python Institute Certified Entry-level Python Programmer certification, validating fundamental Python skills.</p>
+                    <div class="work-links" style="display: flex; gap: 0.75rem;">
+                        <a href="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/certificate_GX1Z.7b8N.DoT3.pdf?alt=media&token=cae0b5db-3c97-4999-9bd9-51f954a7dd60"
+                           class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="
+                           flex: 1;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+                           gap: 0.5rem;
+                           padding: 0.875rem 1.5rem;
+                           font-size: 0.9rem;
+                           font-weight: 600;
+                           transition: all 0.3s ease;
+                        ">
+                            <i class='bx bx-link-external'></i> View Certificate
+                        </a>
+                    </div>
                 </div>
             </div>
 
-                 <!-- Tuwaiq Academy Honor for teaching course -->
-            <div class="work-card fade-in" data-category="web">
-                <div class="work-image">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/Tuwaiq.png?alt=media&token=06aabe2f-eade-47dc-b069-a95e6185a15c" alt="Tuwaiq Academy Honor for teaching course"
-                         style="width:100%; height:100%; object-fit:cover; border-radius:8px;"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div
-                        style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:3rem; color: var(--text-muted);">
-                        <i class='bx bx-package'></i>
+            <!-- Tuwaiq Academy Honor -->
+            <div class="work-card fade-in" data-category="web" style="
+                position: relative;
+                overflow: hidden;
+                transform: translateY(20px);
+                opacity: 0;
+                animation: slideUpFadeIn 0.8s ease-out 0.4s forwards;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            ">
+                <div class="work-image" style="
+                    position: relative;
+                    overflow: hidden;
+                    height: 220px;
+                    background: var(--bg-secondary);
+                    border-radius: 1rem 1rem 0 0;
+                ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/Tuwaiq.png?alt=media&token=06aabe2f-eade-47dc-b069-a95e6185a15c" 
+                         alt="Tuwaiq Academy Honor"
+                         style="
+                            width: 100%; 
+                            height: 100%; 
+                            object-fit: cover; 
+                            transition: transform 0.5s ease;
+                         "
+                         onload="this.style.opacity='1'"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="
+                        display: none; 
+                        width: 100%; 
+                        height: 100%; 
+                        align-items: center; 
+                        justify-content: center; 
+                        font-size: 3rem; 
+                        color: var(--text-muted);
+                        background: var(--bg-secondary);
+                    ">
+                        <i class='bx bx-award'></i>
+                    </div>
+                    <div style="
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        background: var(--accent-color);
+                        color: white;
+                        padding: 0.5rem;
+                        border-radius: 50%;
+                        font-size: 1.2rem;
+                        box-shadow: var(--shadow-medium);
+                    ">
+                        <i class='bx bx-chalkboard'></i>
                     </div>
                 </div>
-                <div class="work-content">
-                    <h4 class="work-title">Tuwaiq Academy Honor</h4>
-                    <p class="work-description">Honor for teaching the course at Tuwaiq Academy.</p>
-                    <a href="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/%E2%80%8E%E2%81%A8%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%A7%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85%20%D8%A7%D9%84%D8%BA%D8%A7%D9%85%D8%AF%D9%8A%E2%81%A9.pdf?alt=media&token=d1d3f220-9b6d-459e-b660-0654cae5a00d"
-                       class="work-link btn" target="_blank" rel="noopener noreferrer">
-                        <i class='bx bx-link-external'></i> View Certificate
-                    </a>
+                <div class="work-content" style="
+                    padding: 2rem 1.5rem;
+                    background: var(--bg-card);
+                    border-radius: 0 0 1rem 1rem;
+                ">
+                    <h4 class="work-title" style="
+                        margin-bottom: 0.75rem;
+                        color: var(--text-primary);
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        line-height: 1.3;
+                    ">Tuwaiq Academy Teaching Honor</h4>
+                    <p class="work-description" style="
+                        color: var(--text-secondary);
+                        margin-bottom: 1.5rem;
+                        line-height: 1.6;
+                        font-size: 0.95rem;
+                    ">Recognition certificate for successfully teaching and mentoring students in programming courses at Tuwaiq Academy.</p>
+                    <div class="work-links" style="display: flex; gap: 0.75rem;">
+                        <a href="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/%E2%80%8E%E2%81%A8%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%A7%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85%20%D8%A7%D9%84%D8%BA%D8%A7%D9%85%D8%AF%D9%8A%E2%81%A9.pdf?alt=media&token=d1d3f220-9b6d-459e-b660-0654cae5a00d"
+                           class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="
+                           flex: 1;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+                           gap: 0.5rem;
+                           padding: 0.875rem 1.5rem;
+                           font-size: 0.9rem;
+                           font-weight: 600;
+                           transition: all 0.3s ease;
+                        ">
+                            <i class='bx bx-link-external'></i> View Certificate
+                        </a>
+                    </div>
                 </div>
             </div>
 
-
-                  <!-- Udamy PowerBi course -->
-            <div class="work-card fade-in" data-category="web">
-                <div class="work-image">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/Screenshot%201447-03-26%20at%208.29.17%E2%80%AFPM.png?alt=media&token=c43c40a7-8b3c-4c69-899a-91b763978f8e" alt="Udamy PowerBi course"
-                         style="width:100%; height:100%; object-fit:cover; border-radius:8px;"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div
-                        style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:3rem; color: var(--text-muted);">
-                        <i class='bx bx-package'></i>
+            <!-- Udemy PowerBI Course -->
+            <div class="work-card fade-in" data-category="web" style="
+                position: relative;
+                overflow: hidden;
+                transform: translateY(20px);
+                opacity: 0;
+                animation: slideUpFadeIn 0.8s ease-out 0.5s forwards;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            ">
+                <div class="work-image" style="
+                    position: relative;
+                    overflow: hidden;
+                    height: 220px;
+                    background: var(--bg-secondary);
+                    border-radius: 1rem 1rem 0 0;
+                ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/Screenshot%201447-03-26%20at%208.29.17%E2%80%AFPM.png?alt=media&token=c43c40a7-8b3c-4c69-899a-91b763978f8e" 
+                         alt="Udemy PowerBI Course"
+                         style="
+                            width: 100%; 
+                            height: 100%; 
+                            object-fit: cover; 
+                            transition: transform 0.5s ease;
+                         "
+                         onload="this.style.opacity='1'"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="
+                        display: none; 
+                        width: 100%; 
+                        height: 100%; 
+                        align-items: center; 
+                        justify-content: center; 
+                        font-size: 3rem; 
+                        color: var(--text-muted);
+                        background: var(--bg-secondary);
+                    ">
+                        <i class='bx bx-award'></i>
+                    </div>
+                    <div style="
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        background: var(--accent-color);
+                        color: white;
+                        padding: 0.5rem;
+                        border-radius: 50%;
+                        font-size: 1.2rem;
+                        box-shadow: var(--shadow-medium);
+                    ">
+                        <i class='bx bx-bar-chart-alt-2'></i>
                     </div>
                 </div>
-                <div class="work-content">
-                    <h4 class="work-title">Udamy PowerBi course</h4>
-                    <p class="work-description">Certificate of completing the course at Udamy.</p>
-                    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-bbd72219-11cd-4929-9ab5-f3d8c5bd7a6b.pdf"
-                       class="work-link btn" target="_blank" rel="noopener noreferrer">
-                        <i class='bx bx-link-external'></i> View Certificate
-                    </a>
+                <div class="work-content" style="
+                    padding: 2rem 1.5rem;
+                    background: var(--bg-card);
+                    border-radius: 0 0 1rem 1rem;
+                ">
+                    <h4 class="work-title" style="
+                        margin-bottom: 0.75rem;
+                        color: var(--text-primary);
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        line-height: 1.3;
+                    ">Udemy PowerBI Certification</h4>
+                    <p class="work-description" style="
+                        color: var(--text-secondary);
+                        margin-bottom: 1.5rem;
+                        line-height: 1.6;
+                        font-size: 0.95rem;
+                    ">Comprehensive Power BI certification covering data visualization, dashboard creation, and business intelligence.</p>
+                    <div class="work-links" style="display: flex; gap: 0.75rem;">
+                        <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-bbd72219-11cd-4929-9ab5-f3d8c5bd7a6b.pdf"
+                           class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="
+                           flex: 1;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+                           gap: 0.5rem;
+                           padding: 0.875rem 1.5rem;
+                           font-size: 0.9rem;
+                           font-weight: 600;
+                           transition: all 0.3s ease;
+                        ">
+                            <i class='bx bx-link-external'></i> View Certificate
+                        </a>
+                    </div>
                 </div>
             </div>
 
-                   <!-- Data Analysis By IBM -->
-            <div class="work-card fade-in" data-category="web">
-                <div class="work-image">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/IMG_4261.jpg?alt=media&token=cd6a3ccd-e605-45a5-bc5a-232acae48edd" alt="Data Analysis By IBM"
-                         style="width:100%; height:100%; object-fit:cover; border-radius:8px;"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div
-                        style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:3rem; color: var(--text-muted);">
-                        <i class='bx bx-package'></i>
+            <!-- IBM Data Analysis -->
+            <div class="work-card fade-in" data-category="web" style="
+                position: relative;
+                overflow: hidden;
+                transform: translateY(20px);
+                opacity: 0;
+                animation: slideUpFadeIn 0.8s ease-out 0.6s forwards;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            ">
+                <div class="work-image" style="
+                    position: relative;
+                    overflow: hidden;
+                    height: 220px;
+                    background: var(--bg-secondary);
+                    border-radius: 1rem 1rem 0 0;
+                ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/IMG_4261.jpg?alt=media&token=cd6a3ccd-e605-45a5-bc5a-232acae48edd" 
+                         alt="IBM Data Analysis Certificate"
+                         style="
+                            width: 100%; 
+                            height: 100%; 
+                            object-fit: cover; 
+                            transition: transform 0.5s ease;
+                         "
+                         onload="this.style.opacity='1'"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="
+                        display: none; 
+                        width: 100%; 
+                        height: 100%; 
+                        align-items: center; 
+                        justify-content: center; 
+                        font-size: 3rem; 
+                        color: var(--text-muted);
+                        background: var(--bg-secondary);
+                    ">
+                        <i class='bx bx-award'></i>
+                    </div>
+                    <div style="
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        background: var(--accent-color);
+                        color: white;
+                        padding: 0.5rem;
+                        border-radius: 50%;
+                        font-size: 1.2rem;
+                        box-shadow: var(--shadow-medium);
+                    ">
+                        <i class='bx bx-data'></i>
                     </div>
                 </div>
-                <div class="work-content">
-                    <h4 class="work-title">Data Analysis By IBM</h4>
-                    <p class="work-description">Certificate of completing the course at IBM.</p>
-                    <a href="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/IMG_4261.jpg?alt=media&token=cd6a3ccd-e605-45a5-bc5a-232acae48edd"
-                       class="work-link btn" target="_blank" rel="noopener noreferrer">
-                        <i class='bx bx-link-external'></i> View Certificate
-                    </a>
+                <div class="work-content" style="
+                    padding: 2rem 1.5rem;
+                    background: var(--bg-card);
+                    border-radius: 0 0 1rem 1rem;
+                ">
+                    <h4 class="work-title" style="
+                        margin-bottom: 0.75rem;
+                        color: var(--text-primary);
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        line-height: 1.3;
+                    ">IBM Data Analysis Certification</h4>
+                    <p class="work-description" style="
+                        color: var(--text-secondary);
+                        margin-bottom: 1.5rem;
+                        line-height: 1.6;
+                        font-size: 0.95rem;
+                    ">Professional data analysis certification from IBM covering statistical analysis, data visualization, and insights.</p>
+                    <div class="work-links" style="display: flex; gap: 0.75rem;">
+                        <a href="https://firebasestorage.googleapis.com/v0/b/pythoncli-e6c14.appspot.com/o/IMG_4261.jpg?alt=media&token=cd6a3ccd-e605-45a5-bc5a-232acae48edd"
+                           class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="
+                           flex: 1;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+                           gap: 0.5rem;
+                           padding: 0.875rem 1.5rem;
+                           font-size: 0.9rem;
+                           font-weight: 600;
+                           transition: all 0.3s ease;
+                        ">
+                            <i class='bx bx-link-external'></i> View Certificate
+                        </a>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
+
+<style>
+/* Enhanced Animations */
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Card Hover Effects */
+.work-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: var(--shadow-heavy) !important;
+}
+
+.work-card:hover .work-image img {
+    transform: scale(1.08) !important;
+}
+
+.work-card:hover .work-image div:first-child {
+    background: linear-gradient(135deg, var(--accent-color), var(--text-primary)) !important;
+}
+
+/* Button Hover Effects */
+.work-card .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(187, 152, 117, 0.3) !important;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .work-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .work-card {
+        animation-delay: 0s !important;
+    }
+    
+    .work-image {
+        height: 180px !important;
+    }
+    
+    .work-content {
+        padding: 1.5rem 1.25rem !important;
+    }
+    
+    .work-title {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-image {
+        height: 160px !important;
+    }
+    
+    .work-content {
+        padding: 1.25rem 1rem !important;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.25rem !important;
+        font-size: 0.85rem !important;
+    }
+}
+</style>
+
 <!-- End of Work Section -->
