@@ -13,7 +13,19 @@ import json
 import html
 
 
+# Load env variables
+load_dotenv()
+OPENAI = os.getenv("OPENAI")
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_REGION = "us-west-2"
 
+openai_client = openai.OpenAI(api_key=OPENAI)
+polly_client = boto3.Session(
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+    region_name=AWS_REGION
+).client("polly")
 
 
 
@@ -325,21 +337,6 @@ def home(request):
                 success = False
 
     return render(request, "main/home.html", {"success": success})
-
-
-# Load env variables
-load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI")
-AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-AWS_REGION = "us-west-2"
-
-openai_client = openai.OpenAI(api_key=OPENAI_API_KEY)
-polly_client = boto3.Session(
-    aws_access_key_id=AWS_ACCESS_KEY_ID,
-    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
-    region_name=AWS_REGION
-).client("polly")
 
 
 
