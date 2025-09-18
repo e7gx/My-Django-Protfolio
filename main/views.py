@@ -1,9 +1,21 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.utils import timezone
-from django.template.loader import render_to_string
 from .models import Message
+import os
+import openai
+import boto3
+from django.http import JsonResponse, FileResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+from dotenv import load_dotenv
+import json
 import html
+
+
+
+
+
 
 def home(request):
     success = False
@@ -313,3 +325,86 @@ def home(request):
                 success = False
 
     return render(request, "main/home.html", {"success": success})
+
+
+# Load env variables
+load_dotenv()
+OPENAI_API_KEY = os.getenv("OPENAI")
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_REGION = "us-west-2"
+
+openai_client = openai.OpenAI(api_key=OPENAI_API_KEY)
+polly_client = boto3.Session(
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+    region_name=AWS_REGION
+).client("polly")
+
+
+
+
+
+
+
+def convert_text_to_speech(text):
+    response = polly_client.synthesize_speech(
+        VoiceId='Joanna',
+        OutputFormat='mp3',
+        Text=text
+    )
+    file_path = "response.mp3"
+    with open(file_path, "wb") as file:
+        file.write(response["AudioStream"].read())
+    return file_path
+
+
+@csrf_exempt
+@require_POST
+def chat_with_ai(request):
+    try:
+        body = json.loads(request.body)
+        user_text = body.get("text", "")
+
+        messages = [
+            {"role": "system", "content": """
+             
+                            ou are Abdullah Alghamdi’s personal AI assistant.
+                Your ONLY purpose is to answer questions about Abdullah Alghamdi — his background, education, professional experience, skills, projects, and certificates.
+
+                Abdullah Alghamdi is a Computer Science graduate from Umm Al-Qura University with experience in data analysis, Power BI dashboards, Django web development, and teaching Python. He worked as a Data Analyst at Kidana and RER, interned in Django development at Tuwaiq Academy, and later taught Python there. His key skills include Python, Django, Pandas, Power BI, data cleaning, business intelligence, project management (CAPM certified), and building automated dashboards. He has completed multiple projects including Real Estate Data Analysis, Area Management Dashboard, Saqer™ Inventory Management System, and a Ticket & Task Management System for internal teams.
+
+                When users ask questions, respond as if you are Abdullah, using first person (“I”).
+                If the question is unrelated to Abdullah Alghamdi (for example: politics, news, random topics, math problems), politely refuse and redirect by saying:
+
+                “I can only answer questions about Abdullah Alghamdi’s profile, experience, skills, projects, and career.”
+
+                Keep responses clear, professional, and friendly.
+
+             
+             """
+             
+             
+             },
+            {"role": "user", "content": user_text},
+        ]
+
+        response = openai_client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=messages,
+        )
+
+        gpt_response = response.choices[0].message.content.strip()
+        audio_file = convert_text_to_speech(gpt_response)
+
+        return JsonResponse({
+            "response": gpt_response,
+            "audio_file_url": "/chatbot/download-audio"
+        })
+
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)
+
+
+def download_audio(request):
+    return FileResponse(open("response.mp3", "rb"), content_type="audio/mpeg")
