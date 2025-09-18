@@ -12,21 +12,30 @@ from dotenv import load_dotenv
 import json
 import html
 
-
 # Load env variables
 load_dotenv()
+
+# Get API keys
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-AWS_REGION = "us-west-2"
+AWS_REGION = os.getenv("AWS_REGION", "us-west-2")  # default region if not set
 
+# Validate keys
+if not OPENAI_API_KEY:
+    raise ValueError("OPENAI_API_KEY not set in environment")
+
+if not AWS_ACCESS_KEY_ID or not AWS_SECRET_ACCESS_KEY:
+    raise ValueError("AWS credentials not set in environment")
+
+# Initialize clients
 openai_client = openai.OpenAI(api_key=OPENAI_API_KEY)
+
 polly_client = boto3.Session(
     aws_access_key_id=AWS_ACCESS_KEY_ID,
     aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
     region_name=AWS_REGION
 ).client("polly")
-
 
 
 def home(request):
